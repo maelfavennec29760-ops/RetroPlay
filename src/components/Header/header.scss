@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 90%;
+    margin: 0 auto;
+    padding: 12px 20px;
+
+    background: rgba(8, 45, 90, 0.55);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+
+            &.active::after{
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: -8px;
+                width: 20px;
+                height: 2px;
+                background: white;
+                border-radius: 2px;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    .start-btn {
+    padding: 10px 20px;
+    background: #fff;
+    color: #1677e8;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+}
