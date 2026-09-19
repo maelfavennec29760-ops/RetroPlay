@@ -1,0 +1,108 @@
+.library {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 110px;
+    padding-left: 100px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        background: linear-gradient(
+            90deg,
+            rgba(5, 30, 60, 0.4) 0%,
+            rgba(5, 30, 60, 0.18) 35%,
+            transparent 60%
+        );
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+/* =========================
+        Library title
+========================= */
+
+.libraryText {
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+
+    h1 {
+        margin: 0 0 8px;
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.1;
+        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    p {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    }
+}
+
+
+/* =========================
+          Games grid
+========================= */
+
+.gamesGrid {
+    position: relative;
+
+    width: 80%;
+    margin: 30px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 205px);
+    gap: 16px;
+
+    .carouselBtn {
+        position: absolute;
+        top: 250px;
+
+        width: 48px;
+        height: 48px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+
+        background: rgba(10, 40, 70, 0.85);
+        color: white;
+
+        cursor: pointer;
+        z-index: 10;
+
+        svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        &:hover {
+            background: rgba(15, 75, 120, 0.95);
+        }
+    }
+
+    .carouselBtnLeft {
+        left: -70px;
+    }
+
+    .carouselBtnRight {
+        right: 70px;
+    }
+}

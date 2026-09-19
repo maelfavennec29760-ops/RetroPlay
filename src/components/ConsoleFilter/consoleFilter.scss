@@ -1,0 +1,56 @@
+.consoleSelect {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    margin: 25px auto 0;
+
+    button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+
+        min-height: 46px;
+        padding: 10px 20px;
+
+        color: white;
+        font-family: inherit;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: nowrap;
+
+        background: rgba(12, 62, 105, 0.75);
+        backdrop-filter: blur(8px);
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+        cursor: pointer;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            border-color 0.2s ease;
+
+        img {
+            width: 27px;
+            height: 27px;
+            object-fit: contain;
+        }
+
+        &:hover {
+            background: rgba(20, 92, 155, 0.85);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        &.active {
+            background: #2583ef;
+            border-color: #2583ef;
+            box-shadow: 0 4px 14px rgba(20, 105, 220, 0.35);
+        }
+    }
+}

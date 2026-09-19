@@ -9,7 +9,7 @@ function Header() {
             <Logo/>
             <nav>
                 <NavLink to="/" end>Accueil</NavLink>
-                <NavLink to="/games">Jeux</NavLink>
+                <NavLink to="/library">Jeux</NavLink>
                 <NavLink to="/consoles">Console</NavLink>
                 <NavLink to="/about">A propos</NavLink>
             </nav>

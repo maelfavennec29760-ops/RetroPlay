@@ -8,4 +8,9 @@
 
 body {
     font-family: "Inter", sans-serif;
+    background-image: url("./assets/backgroudImg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

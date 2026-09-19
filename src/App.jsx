@@ -1,8 +1,25 @@
+import { Routes, Route} from 'react-router-dom'
+
 import Home from './pages/Home/home.jsx'
+import Library from './pages/Library/library.jsx'
+import Play from './pages/Play/play.jsx'
+import Settings from './pages/Settings/settings.jsx'
+
+import Header from './components/Header/header.jsx'
+import Footer from './components/Footer/footer.jsx'
 
 function App() {
   return (
-    <Home/>
+    <>
+    <Header/>
+    <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/library" element={<Library />}/>
+        <Route path="/play" element={<Play />}/>
+        <Route path="/settings" element={<Settings />}/>
+    </Routes>
+    <Footer/>
+    </>
   )
 }
 

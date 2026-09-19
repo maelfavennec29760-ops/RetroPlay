@@ -1,0 +1,145 @@
+{ 
+    "gameboy": [
+        {
+            "id": "PokemonRouge",
+            "title": "Pokemon Rouge",
+            "console": "Gameboy",
+            "year": 1999,
+            "cover": "/gamecover/gameboy/pokemon-rouge-gameboy.svg",
+            "rom": ""
+        },
+        {
+            "id": "PokemonBleu",
+            "title": "Pokemon Bleu",
+            "console": "Gameboy",
+            "year": 1999,
+            "cover": "/gamecover/gameboy/pokemon-bleu-gameboy.svg",
+            "rom": ""
+        },
+        {
+            "id": "PokemonJaune",
+            "title": "Pokemon Jaune",
+            "console": "Gameboy",
+            "year": 2000,
+            "cover": "/gamecover/gameboy/pokemon-jaune-gameboy.svg",
+            "rom": ""
+        },
+        {
+            "id": "ZeldaLA",
+            "title": "Zelda Link's Awakening",
+            "console": "Gameboy",
+            "year": 1993,
+            "cover": "/gamecover/gameboy/the-legend-of-zelda-links-awakening-game-boy.webp",
+            "rom": ""
+        },
+        {
+            "id": "Tetris",
+            "title": "Tetris",
+            "console": "Gameboy",
+            "year": 1989,
+            "cover": "/gamecover/gameboy/tetris.webp",
+            "rom": ""
+        },
+        {
+            "id": "SuperMarioLand",
+            "title": "Super Mario Land",
+            "console": "Gameboy",
+            "year": 1989,
+            "cover": "/gamecover/gameboy/super-mario-land.webp",
+            "rom": ""
+        },
+        {
+            "id": "SuperMarioLandGoldenCoins",
+            "title": "Super Mario Land 2 : Golden Coins",
+            "console": "Gameboy",
+            "year": 1992,
+            "cover": "/gamecover/gameboy/super-mario-land-golden-coins.webp",
+            "rom": ""
+        },
+        {
+            "id": "WarioLandSuperMarioLand3",
+            "title": "Wario Land : Super Mario Land 3",
+            "console": "Gameboy",
+            "year": 1994,
+            "cover": "/gamecover/gameboy/wario-land-super-mario-land-3.webp",
+            "rom": ""
+        },
+        {
+            "id": "DonkeyKong",
+            "title": "Donkey Kong",
+            "console": "Gameboy",
+            "year": 1994,
+            "cover": "/gamecover/gameboy/donkey-kong.webp",
+            "rom": ""
+        },
+        {
+            "id": "KirbysDreamLand",
+            "title": "Kirby's Dream Land",
+            "console": "Gameboy",
+            "year": 1992,
+            "cover": "/gamecover/gameboy/kirby-s-dream-land.webp",
+            "rom": ""
+        },
+        {
+            "id": "CastlevaniaLegends",
+            "title": "Castlevania Legends",
+            "console": "Gameboy",
+            "year": 1997,
+            "cover": "/gamecover/gameboy/castlevania-legends.webp",
+            "rom": ""
+        }
+    ],
+    "gameboyColor": [
+        {
+            "id": "SuperMarioBrosDeluxe",
+            "title": "Super Mario Bros Deluxe",
+            "console": "GameboyColor",
+            "year": 1999,
+            "cover": "/gamecover/gameboyColor/super-mario-bros-deluxe.webp",
+            "rom": ""
+        }
+    ],
+    "gameboyAdvance": [
+        {
+            "id": "MarioKartSuperCircuit",
+            "title": "Mario Kart Super Circuit",
+            "console": "GameboyAdvance",
+            "year": 2001,
+            "cover": "/gamecover/gameboyAdvance/mario-kart-super-circuit.webp",
+            "rom": ""
+        }
+
+    ],
+    "nes": [
+        {
+            "id": "SuperMarioBros",
+            "title": "Super Mario Bros",
+            "console": "Nes",
+            "year": 1987,
+            "cover": "/gamecover/nes/super-mario-bros.webp",
+            "rom": ""
+        }
+
+    ],
+    "superNes": [
+        {
+            "id": "SuperMarioWorld",
+            "title": "Super Mario World",
+            "console": "SuperNes",
+            "year": 1992,
+            "cover": "/gamecover/superNes/super-mario-world.webp",
+            "rom": ""
+        }
+
+    ],
+    "segaMegaDrive": [
+        {
+            "id": "SonicTheHedgehog",
+            "title": "Sonic The Hedgehog",
+            "console": "SegaMegaDrive",
+            "year": 1991,
+            "cover": "/gamecover/segaMegaDrive/sonic-the-hedgehog.webp"
+        }
+
+    ]
+}
