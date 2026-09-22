@@ -5,6 +5,7 @@ import Library from './pages/Library/library.jsx'
 import Console from './pages/Console/console..jsx'
 import Play from './pages/Play/play.jsx'
 import Settings from './pages/Settings/settings.jsx'
+import Game from "./pages/Game/game.jsx"
 
 import Header from './components/Header/header.jsx'
 import Footer from './components/Footer/footer.jsx'
@@ -17,7 +18,7 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/library" element={<Library />}/>
         <Route path="/console" element={<Console />}/>
-        <Route path="/play" element={<Play />}/>
+        <Route path="/play/:id" element={<Game />}/>
         <Route path="/settings" element={<Settings />}/>
     </Routes>
     <Footer/>

@@ -1,23 +1,23 @@
 { 
     "gameboy": [
         {
-            "id": "PokemonRouge",
+            "id": 1,
             "title": "Pokemon Rouge",
             "console": "Gameboy",
             "year": 1999,
             "cover": "/gamecover/gameboy/pokemon-rouge-gameboy.svg",
-            "rom": ""
+            "rom": "/roms/gameboy/PokemonRouge.gb"
         },
         {
-            "id": "PokemonBleu",
+            "id": 2,
             "title": "Pokemon Bleu",
             "console": "Gameboy",
             "year": 1999,
             "cover": "/gamecover/gameboy/pokemon-bleu-gameboy.svg",
-            "rom": ""
+            "rom": "/roms/gameboy/PokemonBleu.gb"
         },
         {
-            "id": "PokemonJaune",
+            "id": 3,
             "title": "Pokemon Jaune",
             "console": "Gameboy",
             "year": 2000,
@@ -25,7 +25,7 @@
             "rom": ""
         },
         {
-            "id": "ZeldaLA",
+            "id": 4,
             "title": "Zelda Link's Awakening",
             "console": "Gameboy",
             "year": 1993,
@@ -33,7 +33,7 @@
             "rom": ""
         },
         {
-            "id": "Tetris",
+            "id": 5,
             "title": "Tetris",
             "console": "Gameboy",
             "year": 1989,
@@ -41,7 +41,7 @@
             "rom": ""
         },
         {
-            "id": "SuperMarioLand",
+            "id": 6,
             "title": "Super Mario Land",
             "console": "Gameboy",
             "year": 1989,
@@ -49,7 +49,7 @@
             "rom": ""
         },
         {
-            "id": "SuperMarioLandGoldenCoins",
+            "id": 7,
             "title": "Super Mario Land 2 : Golden Coins",
             "console": "Gameboy",
             "year": 1992,
@@ -57,7 +57,7 @@
             "rom": ""
         },
         {
-            "id": "WarioLandSuperMarioLand3",
+            "id": 8,
             "title": "Wario Land : Super Mario Land 3",
             "console": "Gameboy",
             "year": 1994,
@@ -65,7 +65,7 @@
             "rom": ""
         },
         {
-            "id": "DonkeyKong",
+            "id": 9,
             "title": "Donkey Kong",
             "console": "Gameboy",
             "year": 1994,
@@ -73,7 +73,7 @@
             "rom": ""
         },
         {
-            "id": "KirbysDreamLand",
+            "id": 10,
             "title": "Kirby's Dream Land",
             "console": "Gameboy",
             "year": 1992,
@@ -81,7 +81,7 @@
             "rom": ""
         },
         {
-            "id": "CastlevaniaLegends",
+            "id": 11,
             "title": "Castlevania Legends",
             "console": "Gameboy",
             "year": 1997,
@@ -91,7 +91,7 @@
     ],
     "gameboyColor": [
         {
-            "id": "SuperMarioBrosDeluxe",
+            "id": 1000,
             "title": "Super Mario Bros Deluxe",
             "console": "GameboyColor",
             "year": 1999,
@@ -101,7 +101,7 @@
     ],
     "gameboyAdvance": [
         {
-            "id": "MarioKartSuperCircuit",
+            "id": 2000,
             "title": "Mario Kart Super Circuit",
             "console": "GameboyAdvance",
             "year": 2001,
@@ -112,7 +112,7 @@
     ],
     "nes": [
         {
-            "id": "SuperMarioBros",
+            "id": 3000,
             "title": "Super Mario Bros",
             "console": "Nes",
             "year": 1987,
@@ -123,7 +123,7 @@
     ],
     "superNes": [
         {
-            "id": "SuperMarioWorld",
+            "id": 4000,
             "title": "Super Mario World",
             "console": "SuperNes",
             "year": 1992,
@@ -134,11 +134,12 @@
     ],
     "segaMegaDrive": [
         {
-            "id": "SonicTheHedgehog",
+            "id": 5000,
             "title": "Sonic The Hedgehog",
             "console": "SegaMegaDrive",
             "year": 1991,
-            "cover": "/gamecover/segaMegaDrive/sonic-the-hedgehog.webp"
+            "cover": "/gamecover/segaMegaDrive/sonic-the-hedgehog.webp",
+            "rom": "/roms/segaMegaDrive/SonicTheHedgehog.md"
         }
 
     ]

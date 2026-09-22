@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroPlay - Emulator</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .ejs_volume_parent,
+        .ejs_menu_button,
+        .ejs_menu_bar {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: 900px; height: 600px; max-width: 100%;">
+        <div id="game"></div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search)
+        const rom = params.get("rom")
+        const consoleName = params.get("console")
+        const cores = {
+            Gameboy: "gb",
+            GameboyColor: "gb",
+            GameboyAdvance: "gba",
+            Nes: "nes",
+            SuperNes: "snes",
+            SegaMegaDrive: "genesis_plus_gx"
+        }
+        const core = cores[consoleName]
+
+        EJS_player = "#game";
+        EJS_core = core;
+        EJS_gameUrl = rom;
+        EJS_pathtodata = "https://cdn.emulatorjs.org/4.2.3/data/";
+        EJS_language = "en-US";
+        EJS_disableAutoLang = true;
+        EJS_Buttons = {
+            playPause: false,
+            restart: false,
+            mute: false,
+            settings: false,
+            fullscreen: false,
+            saveState: false,
+            loadState: false,
+            screenRecord: false,
+            gamepad: false,
+            cheat: false,
+            volume: false,
+            saveSavFiles: false,
+            loadSavFiles: false,
+            quickSave: false,
+            quickLoad: false,
+            screenshot: false,
+            cacheManager: false,
+            exitEmulation: false
+        }
+        EJS_StartOnLoaded = false;
+    </script>
+    
+    <script src="https://cdn.emulatorjs.org/4.2.3/data/loader.js"></script>
+    <script>
+    window.addEventListener("message", (event) => {
+        if (event.origin !== window.location.origin) {
+            return;
+        }
+        if (event.data.action === "startGame") {
+            const startButton = document.querySelector(".ejs_start_button")
+            if(startButton) {
+                startButton.click()
+            }
+        }
+    })
+</script>
+</body>
+</html>

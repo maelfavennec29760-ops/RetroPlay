@@ -1,0 +1,39 @@
+.gamePage {
+    min-height: 100vh;
+    padding-top: 130px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: white;
+}
+.gameContainer {
+    position: relative;
+    width: 900px;
+    height: 600px;
+}
+
+.startScreen {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+
+    width: 100%;
+    height: 100%;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    button {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        transform: translateX(-50%);
+        z-index: 11;
+    }
+}
