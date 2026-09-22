@@ -1,0 +1,113 @@
+.consoleCard {
+    position: relative;
+    min-height: 280px;
+    padding: 20px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(8, 45, 78, 0.72),
+        rgba(8, 65, 105, 0.58)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        border-color: rgba(120, 190, 255, 0.65);
+
+        box-shadow:
+            0 15px 35px rgba(0, 0, 0, 0.25),
+            0 0 25px rgba(50, 150, 255, 0.12);
+    }
+}
+
+.consoleCover {
+    height: 155px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-width: 260px;
+        object-fit: contain;
+
+        transform: translateY(30px);
+
+        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+        transition: transform 0.25s ease;
+    }
+}
+
+
+.consoleInfo {
+    margin-top: 30px;
+
+    h2 {
+        margin: 0 0 5px;
+
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 1.2;
+
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+
+    p {
+        margin: 0;
+
+        font-size: 14px;
+        line-height: 1.4;
+
+        color: rgba(255, 255, 255, 0.72);
+    }
+}
+
+.consoleDetails {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    right: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        padding: 5px 11px;
+
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 20px;
+
+        backdrop-filter: blur(8px);
+
+        font-size: 12px;
+        font-weight: 600;
+
+        color: rgba(255, 255, 255, 0.85);
+    }
+}

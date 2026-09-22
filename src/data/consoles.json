@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Gameboy",
+        "manufacturer": "Nintendo",
+        "year": 1990,
+        "cover": "/console/gameboy.webp",
+        "desc": "La console portable qui a tout changé",
+        "console": "Gameboy"
+    },
+    {
+        "id": 2,
+        "name": "Gameboy Color",
+        "manufacturer": "Nintendo",
+        "year": 1998,
+        "cover": "/console/gameboyColor.webp",
+        "desc": "Plus de couleurs, plus d'aventures",
+        "console": "GameboyColor"
+    },
+    {
+        "id": 3,
+        "name": "Gameboy Advance",
+        "manufacturer": "Nintendo",
+        "year": 2001,
+        "cover": "/console/gameboyAdvance.webp",
+        "desc": "La 32 bits portable",
+        "console": "GameboyAdvance"
+    },
+    {
+        "id": 4,
+        "name": "Nes",
+        "manufacturer": "Nintendo",
+        "year": 1987,
+        "cover": "/console/nes.webp",
+        "desc": "Le début d'une légende",
+        "console": "Nes"
+    },
+    {
+        "id": 5,
+        "name": "Super Nes",
+        "manufacturer": "Nintendo",
+        "year": 1992,
+        "cover": "/console/superNes.webp",
+        "desc": "Des classiques inoubliables",
+        "console": "SuperNes"
+    },
+    {
+        "id": 6,
+        "name": "Sega Mega Drive",
+        "manufacturer": "Sega",
+        "year": 1990,
+        "cover": "/console/segaMegaDrive.webp",
+        "desc": "La rivalité qui a marqué toute une génération",
+        "console": "SegaMegaDrive"
+    }
+]

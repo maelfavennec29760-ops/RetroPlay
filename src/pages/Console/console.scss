@@ -1,0 +1,54 @@
+.consolePage {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-left: 115px;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+
+        background: linear-gradient(
+            90deg,
+            rgba(5, 30, 60, 0.4) 0%,
+            rgba(5, 30, 60, 0.18) 35%,
+            transparent 60%
+        );
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .consoleText {
+        color: white;
+        width: 80%;
+        margin: 0 auto;
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
+            text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+        }
+        p {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+        }
+    }
+}
+.consolesGrid {
+    width: 80%;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
