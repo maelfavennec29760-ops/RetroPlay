@@ -1,6 +1,24 @@
-.emulator {
+.emulatorLayout {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 10px;
+
     width: 100%;
-    height: 100%;
-    border: none;
+    margin: 0 auto;
+}
+
+.emulatorFrame {
+    flex: 0 0 900px;
+    width: 900px;
+}
+
+.emulator {
     display: block;
+
+    width: 900px;
+    height: 600px;
+
+    border: none;
 }

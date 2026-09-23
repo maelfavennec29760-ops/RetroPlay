@@ -13,24 +13,24 @@ function Game() {
     })
     console.log(game)
     function startGame(){
-        const iframe = document.querySelector(".emulator")
-        iframe.contentWindow.postMessage({
-            action: "startGame"
-        }, window.location.origin)
         setStarted(true)
     }
+    function stopGame(){
+        setStarted(false)
+    }
+
     return (
         <main className="gamePage">
             <h1>{game.title}</h1>
             <div className="gameContainer">
-                <Emulator game={game} />
+                <Emulator game={game} onGameStart={startGame} onGameStop={stopGame} />
                 {!started && (
                 <div className="startScreen">
                     <img
                         src="/background/backgroundEJS.png"
                         alt="RetroPlay"
                     />
-                    <button onClick={startGame}>
+                    <button className="startGame" onClick={startGame}>
                         START GAME
                     </button>
                 </div>
