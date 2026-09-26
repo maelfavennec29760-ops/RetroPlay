@@ -76,6 +76,11 @@
     </script>
     
     <script src="https://cdn.emulatorjs.org/4.2.3/data/loader.js"></script>
+    <script>
+    setTimeout(() => {
+        console.log("INSTANCE EJS :", window.EJS_emulator)
+    }, 3000)
+</script>
 
 <script>
     window.addEventListener("message", (event) => {
@@ -84,12 +89,9 @@
         if (event.origin !== window.location.origin) {
             return
         }
-
-
         // =========================
         // PLAY
         // =========================
-
         if (
             event.data.action === "startGame" ||
             event.data.action === "play"
@@ -99,95 +101,131 @@
             if (startButton) {
                 startButton.click()
             }
+            setTimeout (() => {
+            const emulator = window.EJS_emulator
+            if (emulator) {
+                emulator.muted = false
+                emulator.setVolume(0.5)
+                console.log("AUDIO INITIALISÉ")
+                console.log("Muted :", emulator.muted)
+                console.log("Volume :", emulator.volume)
+            }
+            }, 1000)
         }
-
-
         // =========================
         // RESTART
         // =========================
-
         if (event.data.action === "restart") {
             const manager = window.EJS_emulator?.gameManager
-
             if (manager) {
                 manager.restart()
             }
         }
-
-
         // =========================
         // SAVE STATE
         // =========================
-
         if (event.data.action === "save") {
             const manager = window.EJS_emulator?.gameManager
-
             if (!manager) {
                 return
             }
-
             const state = manager.getState()
-
             const blob = new Blob([state], {
                 type: "application/octet-stream"
             })
-
             const url = URL.createObjectURL(blob)
-
             const link = document.createElement("a")
-
             link.href = url
             link.download = "save.state"
-
             link.click()
-
             setTimeout(() => {
                 URL.revokeObjectURL(url)
             }, 1000)
         }
-
-
         // =========================
         // LOAD
         // =========================
-
         if (event.data.action === "loadSave") {
             const manager = window.EJS_emulator?.gameManager
-
             if (!manager) {
                 return
             }
-
             const filename = event.data.filename.toLowerCase()
-
-
             // =====================
             // LOAD .STATE
             // =====================
-
             if (filename.endsWith(".state")) {
                 manager.loadState(event.data.data)
-
                 return
             }
-
-
             // =====================
             // LOAD .SAV
             // =====================
-
             if (filename.endsWith(".sav")) {
                 const savePath = manager.getSaveFilePath()
-
                 manager.writeFile(
                     savePath,
                     event.data.data
                 )
-
                 manager.loadSaveFiles()
-
                 return
             }
+        }
+        // =====================
+        // VOLUME CONTROL
+        // =====================
+        if(event.data.action === "volume") {
+            const volume = Number(event.data.value)
+            const emulator = window.EJS_emulator
+            if(!emulator) {
+                console.error("EmulatorJS indisponible")
+                return
+            }
+            if(volume === 0) {
+                emulator.muted = true
+                emulator.setVolume(0)
+                return
+            }
+            emulator.muted = false
+            emulator.setVolume(volume / 100)
+        }
+        // =====================
+        // RESET KEY DEFAULT
+        // =====================
+        if(event.data.action === "resetKeys") {
+            const controls = window.EJS_emulator?.controls[0]
+            if(!controls) {
+                return
+            }
+            event.data.keys.forEach((key) => {
+                const control = Object.values(controls).find(
+                    (control) => control.value2 === key.control
+                )
+                if(control) {
+                    control.value = Number(key.keyCode)
+                }
+            });
+            console.log("TOUCHE PAR DEFAUT APPLIQUEES")
+        }
+        // =====================
+        // CHANGE KEY
+        // =====================
+        if(event.data.action === "changeKey") {
+            console.log("PLAYER REÇOIT :", event.data)
+            const controls = window.EJS_emulator.controls[0]
+            if(!controls) {
+                console.log("❌ controls indisponible")
+                return
+            }
+            const control = Object.values(controls).find(
+                (control) => control.value2 === event.data.control
+            )
+            console.log("CONTROL TROUVÉ :", control)
+            if(!control) {
+                return
+            }
+            control.value = Number(event.data.keyCode)
+          console.log("NOUVELLE VALEUR :", control)
         }
     })
 </script>

@@ -1,18 +1,42 @@
 import { Keyboard, RotateCw, GamepadDirectional, SquarePen } from 'lucide-react'
 import './keyconfig.scss'
+import { useEffect, useState } from 'react'
+import defaultKeys from '../../data/defaultKeys.js'
 
-function KeyConfig() {
-    const keys = [
-        {name: "Haut", keys: "Z"},
-        {name: "Bas", keys: "S"},
-        {name: "Gauche", keys: "Q"},
-        {name: "Droite", keys: "D"},
-        {name: "Bouton A", keys: "A"},
-        {name: "Bouton B", keys: "X"},
-        {name: "Bouton C", keys: "E"},
-        {name: "Start", keys: "Enter"},
-        {name: "Select", keys: "Shift"},
-    ]
+function KeyConfig({ onChangeKey }) {
+    const [editing, setEditingKey] = useState(null)
+    const [keys, setKeys] = useState(defaultKeys)
+    useEffect(() => {
+        if(!editing) {
+            return
+        }
+        const handleKeyDown = (event) => {
+            console.log("Commande :", editing)
+            console.log("Touche :", event.key)
+            console.log("Code :", event.keyCode)
+            setKeys((currentKeys) => {
+                return currentKeys.map((key) => {
+                    if(key.control === editing) {
+                        return {
+                            ...key,
+                            keys: event.key.toUpperCase()
+                        }
+                    }
+                    return key
+                })
+            })
+            console.log("KEYCONFIG ENVOIE :", editing, event.keyCode)
+            onChangeKey(editing, event.keyCode)
+            setEditingKey(null)
+        }
+        window.addEventListener("keydown", handleKeyDown)
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown)
+        }
+    }, [editing])
+    const resetKeys = () => {
+        setKeys(defaultKeys)
+    }
     return (
         <div className="keyConfigFieldset">
             <div className="keyConfigTitle">
@@ -35,13 +59,13 @@ function KeyConfig() {
                     <div className="keyRow" key={key.name}>
                         <label>{key.name}</label>
                         <input type="text" value={key.keys} readOnly />
-                        <button><SquarePen /></button>
+                        <button onClick={() => setEditingKey(key.control)}><SquarePen /></button>
                     </div>
                     )
                 })}
             </div>
             <div className="resetBtn">
-                <button><RotateCw/> Rénitialiser par défaut</button>
+                <button onClick={resetKeys}><RotateCw/> Rénitialiser par défaut</button>
             </div>
         </div>
     )

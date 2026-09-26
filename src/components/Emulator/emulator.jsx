@@ -1,11 +1,13 @@
 import KeyConfig from '../Keyconfig/keyconfig.jsx'
 import EmulatorControl from '../EmulatorControl/emulatorControl.jsx'
+import defaultKeys from '../../data/defaultKeys.js'
 import './emulator.scss'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 function Emulator({ game, onGameStart, onGameStop }) {
     const emulatorUrl = `/emulator/player.html?rom=${encodeURIComponent(game.rom)}&console=${encodeURIComponent(game.console)}`
     const emulatorRef = useRef(null)
+    const [started, setStarted] = useState(false)
     //Fullscreen
     const handleFullscreen = () => {
         emulatorRef.current.requestFullscreen()
@@ -16,7 +18,16 @@ function Emulator({ game, onGameStart, onGameStop }) {
             { action: "play" },
             window.location.origin
         )
-        onGameStart()
+        setStarted(true)
+        setTimeout(() => {
+            emulatorRef.current?.contentWindow?.postMessage(
+                {
+                    action: "resetKeys",
+                    keys: defaultKeys
+                }, window.location.origin
+            )
+        }, 1000)
+        
     }
     //Restart 
     const handleRestart = () => {
@@ -31,7 +42,7 @@ function Emulator({ game, onGameStart, onGameStop }) {
         if(iframe){
             iframe.src = iframe.src
         }
-        onGameStop()
+        setStarted(false)
     }
     //Save
     const handleSave = () => {
@@ -58,7 +69,40 @@ function Emulator({ game, onGameStart, onGameStop }) {
         } )   
          
     }
+    const onChangeVolume = (volume) => {
+        emulatorRef.current.contentWindow.postMessage(
+            {
+                action: "volume",
+                value: volume
+            }, window.location.origin
+        )
+    }
+    const handleChangeKey = (control, keyCode) => {
+        console.log("EMULATOR REÇOIT :", control, keyCode)
+        console.log("IFRAME :", emulatorRef.current)
+        console.log("CONTENT WINDOW :", emulatorRef.current?.contentWindow)
+        emulatorRef.current?.contentWindow?.postMessage(
+            {
+                action: "changeKey",
+                control: control,
+                keyCode: keyCode
+            },
+            window.location.origin
+        )
+    }
     return (
+        <>
+        {!started && (
+                <div className="startScreen">
+                    <img
+                        src="/background/backgroundEJS.png"
+                        alt="RetroPlay"
+                    />
+                    <button className="startGame" onClick={handlePlay}>
+                        START GAME
+                    </button>
+                </div>
+                )}
         <div className="emulatorLayout">
             <EmulatorControl 
                 handleFullscreen={handleFullscreen}
@@ -67,12 +111,14 @@ function Emulator({ game, onGameStart, onGameStop }) {
                 handleStop={handleStop}
                 handleSave={handleSave}
                 handleLoad={handleLoad}
+                onChangeVolume={onChangeVolume}
             />
             <div className="emulatorFrame">
                 <iframe className="emulator" src={emulatorUrl} ref={emulatorRef} title="RetroPLay Emulator"></iframe>
             </div>
-            <KeyConfig />
+            <KeyConfig onChangeKey={handleChangeKey}/>
         </div>
+        </>
     )
 }
 
