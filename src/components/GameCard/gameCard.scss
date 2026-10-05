@@ -1,3 +1,13 @@
+.gameCardLink {
+    text-decoration: none;
+    color: inherit;
+    &:visited,
+    &:hover,
+    &:active {
+        text-decoration: none;
+        color: inherit;
+    }
+}
 .gameCard {
     width: 205px;
     padding: 12px;

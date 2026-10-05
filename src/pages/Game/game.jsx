@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom"
 import Emulator from "../../components/Emulator/emulator.jsx"
 import games from '../../data/games.json'
 import "./game.scss"
-import { useState } from "react"
 
 function Game() {
     const { id } = useParams()

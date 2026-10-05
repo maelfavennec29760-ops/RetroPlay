@@ -31,6 +31,7 @@ function GameCarousel({ gamesToDisplay }){
             {currentGames.map((game) => (
                 <GameCards
                     key={game.id}
+                    id={game.id}
                     cover={game.cover}
                     title={game.title}
                     console={game.console}
