@@ -14,7 +14,6 @@ function Header() {
                 <NavLink to="/about">A propos</NavLink>
             </nav>
             <SearchBar/>
-            <NavLink to="/" className="start-btn">Commencer</NavLink>
         </header>
     )
 }

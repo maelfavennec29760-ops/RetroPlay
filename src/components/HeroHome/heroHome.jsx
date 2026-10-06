@@ -10,8 +10,7 @@ function HeroHome() {
                 <h2>Les classiques n'ont jamais eu autant de vie</h2>
                 <p>Des centaines de jeux rétro directement dans votre navigateur. Aucune installation. Juste jouer</p>
                 <nav>
-                    <NavLink to="/">Jouer maintenant</NavLink>
-                    <NavLink to="/">Explorer la bibliothèque</NavLink>
+                    <NavLink to="/library">Explorer la bibliothèque</NavLink>
                 </nav>
             </div>
             <img src={gameboyImg} alt="image de gameboy" className='gameboy'/>

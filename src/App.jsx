@@ -1,16 +1,16 @@
-import { Routes, Route} from 'react-router-dom'
+import { Routes, Route, useLocation} from 'react-router-dom'
 
 import Home from './pages/Home/home.jsx'
 import Library from './pages/Library/library.jsx'
 import Console from './pages/Console/console..jsx'
-import Play from './pages/Play/play.jsx'
-import Settings from './pages/Settings/settings.jsx'
-import Game from "./pages/Game/game.jsx"
+import Game from './pages/Game/game.jsx'
+import About from './pages/About/about.jsx'
 
 import Header from './components/Header/header.jsx'
 import Footer from './components/Footer/footer.jsx'
 
 function App() {
+  const location = useLocation()
   return (
     <>
     <Header/>
@@ -19,9 +19,9 @@ function App() {
         <Route path="/library" element={<Library />}/>
         <Route path="/console" element={<Console />}/>
         <Route path="/play/:id" element={<Game />}/>
-        <Route path="/settings" element={<Settings />}/>
+        <Route path="/about" element={<About />}/>
     </Routes>
-    <Footer/>
+    {location.pathname !== "/about" && <Footer />}
     </>
   )
 }

@@ -1,0 +1,521 @@
+// =============================
+// PAGE ABOUT
+// =============================
+
+.about {
+    position: relative;
+
+    height: 100vh;
+    padding: 120px 20px 15px;
+
+    color: white;
+    overflow: hidden;
+
+    // Ombre sur le côté gauche du décor
+    &::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        pointer-events: none;
+
+        background: linear-gradient(
+            90deg,
+            rgba(5, 30, 60, 0.4) 0%,
+            rgba(5, 30, 60, 0.18) 35%,
+            transparent 60%
+        );
+    }
+}
+
+
+// =============================
+// HERO
+// =============================
+
+.aboutHero {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 22px;
+
+    text-align: center;
+
+    h1 {
+        margin: 0;
+
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: 0.5px;
+
+        text-transform: uppercase;
+
+        color: #ffffff;
+
+        text-shadow:
+            0 2px 2px rgba(0, 0, 0, 0.35),
+            0 4px 10px rgba(0, 0, 0, 0.25);
+
+        span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #ff3b70;
+
+            text-shadow:
+                0 2px 2px rgba(0, 0, 0, 0.3),
+                0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    p {
+        max-width: 560px;
+
+        margin: 14px auto 0;
+
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+
+        color: #ffffff;
+
+        text-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.8),
+            0 2px 5px rgba(0, 0, 0, 0.55);
+    }
+}
+
+
+.aboutHeroLine {
+    width: 55px;
+    height: 3px;
+
+    margin: 13px auto 0;
+
+    border-radius: 50px;
+
+    background: #ff3b70;
+
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.3);
+}
+// =============================
+// CONTENU
+// =============================
+
+.aboutContent {
+    position: relative;
+    z-index: 1;
+
+    width: min(900px, 100%);
+
+    margin: 0 auto;
+}
+
+
+// =============================
+// INTRO RETROPLAY
+// =============================
+
+.aboutIntro {
+    min-height: 145px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 30px;
+
+    background: rgba(7, 44, 82, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(32, 130, 220, 0.08);
+}
+
+
+.aboutIntroText {
+    max-width: 570px;
+
+    h2 {
+        margin: 0 0 13px;
+
+        font-size: 24px;
+    }
+
+    p {
+        margin: 7px 0;
+
+        font-size: 13px;
+        line-height: 1.5;
+
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+
+.aboutIntroVisual {
+    width: 180px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 62px;
+}
+
+
+// =============================
+// PROJET + FONCTIONNALITÉS
+// =============================
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+
+.aboutCard {
+    min-height: 180px;
+
+    padding: 20px 24px;
+
+    background: rgba(7, 44, 82, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(32, 130, 220, 0.08);
+
+    h2 {
+        margin: 0 0 13px;
+
+        font-size: 21px;
+    }
+
+    p {
+        margin: 7px 0;
+
+        font-size: 13px;
+        line-height: 1.45;
+
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+
+// =============================
+// LISTE FONCTIONNALITÉS
+// =============================
+
+.featuresList {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+        font-size: 13px;
+        line-height: 1.35;
+
+        color: rgba(255, 255, 255, 0.9);
+    }
+}
+
+
+// =============================
+// TECHNOLOGIES
+// =============================
+
+.aboutTechnologies {
+    margin-top: 12px;
+
+    padding: 16px 20px;
+
+    background: rgba(7, 44, 82, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    backdrop-filter: blur(5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 18px rgba(32, 130, 220, 0.08);
+
+    h2 {
+        margin: 0 0 4px;
+
+        font-size: 20px;
+    }
+
+    > p {
+        margin: 0 0 10px;
+
+        font-size: 11px;
+
+        color: rgba(255, 255, 255, 0.7);
+    }
+}
+
+
+// =============================
+// GRILLE TECHNOLOGIES
+// =============================
+
+.technologiesGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 9px;
+}
+
+
+// =============================
+// CARTE TECHNOLOGIE
+// =============================
+
+.techCard {
+    min-height: 72px;
+
+    padding: 9px 7px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+
+        background: rgba(255, 255, 255, 0.06);
+
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+// =============================
+// CONTENU CARTE TECHNOLOGIE
+// =============================
+
+.techCardTitle {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 4px;
+
+    img {
+        width: 27px;
+        height: 27px;
+
+        display: block;
+
+        object-fit: contain;
+    }
+
+    strong {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    span {
+        font-size: 9px;
+        line-height: 1.2;
+
+        color: rgba(255, 255, 255, 0.65);
+    }
+}
+
+
+// =============================
+// ÉCRANS MOINS HAUTS
+// =============================
+
+@media (max-height: 750px) {
+
+    .about {
+        height: auto;
+        min-height: 100vh;
+
+        overflow: visible;
+    }
+}
+
+
+// =============================
+// TABLETTE / MOBILE
+// =============================
+
+@media (max-width: 768px) {
+
+    .about {
+        height: auto;
+        min-height: 100vh;
+
+        padding: 90px 15px 30px;
+
+        overflow: visible;
+
+        &::before {
+            background: linear-gradient(
+                90deg,
+                rgba(5, 30, 60, 0.35) 0%,
+                rgba(5, 30, 60, 0.12) 50%,
+                transparent 100%
+            );
+        }
+    }
+
+
+    // HERO
+
+    .aboutHero {
+        margin-bottom: 18px;
+
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+
+
+    // INTRO
+
+    .aboutIntro {
+        min-height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .aboutIntroText {
+
+        h2 {
+            font-size: 21px;
+        }
+    }
+
+
+    .aboutIntroVisual {
+        width: auto;
+
+        font-size: 45px;
+    }
+
+
+    // PROJET + FONCTIONNALITÉS
+
+    .aboutGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .aboutCard {
+        min-height: auto;
+    }
+
+
+    // TECHNOLOGIES
+
+    .technologiesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .techCard {
+        min-height: 82px;
+    }
+
+
+    .techCardTitle {
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+
+// =============================
+// PETIT MOBILE
+// =============================
+
+@media (max-width: 480px) {
+
+    .aboutHero {
+
+        h1 {
+            font-size: 26px;
+        }
+    }
+
+
+    .technologiesGrid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .techCard {
+        min-height: 85px;
+    }
+
+
+    .techCardTitle {
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
