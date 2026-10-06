@@ -1,5 +1,5 @@
 header {
-   position: absolute;
+    position: absolute;
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
@@ -12,42 +12,220 @@ header {
     width: 90%;
     padding: 12px 20px;
 
+    box-sizing: border-box;
+
     background: rgba(8, 45, 90, 0.55);
     backdrop-filter: blur(10px);
 
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 16px;
 
-    nav {
+    .headerMenu {
         display: flex;
         align-items: center;
         gap: 30px;
 
-        a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
 
-            &.active::after{
-                content: "";
-                position: absolute;
-                left: 50%;
-                bottom: -8px;
-                width: 20px;
-                height: 2px;
-                background: white;
-                border-radius: 2px;
-                transform: translateX(-50%);
+            a {
+                position: relative;
+
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+
+                &.active::after {
+                    content: "";
+
+                    position: absolute;
+                    left: 50%;
+                    bottom: -8px;
+
+                    width: 20px;
+                    height: 2px;
+
+                    background: white;
+                    border-radius: 2px;
+
+                    transform: translateX(-50%);
+                }
             }
         }
     }
+
     .start-btn {
-    padding: 10px 20px;
-    background: #fff;
-    color: #1677e8;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: 600;
+        padding: 10px 20px;
+
+        background: #fff;
+        color: #1677e8;
+
+        border-radius: 20px;
+
+        text-decoration: none;
+        font-weight: 600;
+    }
 }
+
+
+// =============================
+// BURGER
+// =============================
+
+.menuBurger {
+    display: none;
+
+    padding: 5px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 26px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+// =============================
+// TABLETTE
+// =============================
+
+@media (max-width: 1024px) {
+
+    header {
+        width: 94%;
+
+        .headerMenu {
+            gap: 20px;
+
+            nav {
+                gap: 20px;
+
+                a {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+// =============================
+// MOBILE
+// =============================
+
+@media (max-width: 900px) {
+
+    header {
+        top: 10px;
+
+        width: 92%;
+        padding: 10px 15px;
+
+        .headerMenu {
+            display: none;
+
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+
+            width: 100%;
+            padding: 16px;
+
+            flex-direction: column;
+            align-items: stretch;
+            gap: 15px;
+
+            box-sizing: border-box;
+
+            background: rgba(8, 45, 90, 0.95);
+            backdrop-filter: blur(12px);
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+            &.menuOpen {
+                display: flex;
+            }
+
+            nav {
+                display: flex;
+
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+
+                a {
+                    width: 100%;
+                    padding: 12px 15px;
+
+                    box-sizing: border-box;
+
+                    border-radius: 10px;
+
+                    font-size: 15px;
+
+                    transition: background 0.2s ease;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.08);
+                    }
+
+                    &.active {
+                        background: rgba(255, 255, 255, 0.1);
+                    }
+
+                    &.active::after {
+                        display: none;
+                    }
+                }
+            }
+
+            // SearchBar
+            .searchbar {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+
+    .menuBurger {
+        display: block;
+
+        position: relative;
+        z-index: 2;
+    }
+}
+
+
+// =============================
+// PETIT MOBILE
+// =============================
+
+@media (max-width: 480px) {
+
+    header {
+        width: calc(100% - 20px);
+        padding: 9px 12px;
+
+        .headerMenu {
+            padding: 12px;
+
+            nav {
+                a {
+                    padding: 11px 12px;
+                }
+            }
+        }
+    }
+
+    .menuBurger {
+        font-size: 24px;
+    }
 }

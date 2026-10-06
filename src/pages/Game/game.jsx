@@ -13,6 +13,17 @@ function Game() {
 
     return (
         <main className="gamePage">
+           <div className="mobileWarning">
+                <span className="mobileWarningBadge">Mobile</span>
+                <h2>RetroPlay arrive bientôt sur mobile</h2>
+                <p>
+                    Nous travaillons encore sur l'expérience de jeu sur smartphone.
+                    En attendant, profitez pleinement de RetroPlay depuis un ordinateur.
+                </p>
+                <span className="mobileWarningNote">
+                    🎮 Support tactile en préparation
+                </span>
+            </div>
             <h1>{game.title}</h1>
             <div className="gameContainer">
                 <Emulator game={game}/>

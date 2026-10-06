@@ -21,7 +21,7 @@ function App() {
         <Route path="/play/:id" element={<Game />}/>
         <Route path="/about" element={<About />}/>
     </Routes>
-    {location.pathname !== "/about" && <Footer />}
+    {location.pathname !== "/about" && location.pathname !== "/library" && location.pathname !== "/console" && <Footer />}
     </>
   )
 }

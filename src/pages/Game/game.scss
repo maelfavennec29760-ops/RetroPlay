@@ -1,18 +1,56 @@
+/* =============================
+        MOBILE WARNING
+============================= */
+
+.mobileWarning {
+    display: none;
+}
+
+
+/* =============================
+            GAME PAGE
+============================= */
+
 .gamePage {
     min-height: 100vh;
     padding-top: 130px;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
 
     color: white;
+
+    > h1 {
+        margin: 0 0 20px;
+
+        font-size: 32px;
+        font-weight: 800;
+        line-height: 1.2;
+
+        text-align: center;
+
+        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    }
 }
+
+
+/* =============================
+        GAME CONTAINER
+============================= */
+
 .gameContainer {
     position: relative;
+
     width: 900px;
     height: 600px;
 }
+
+
+/* =============================
+          START SCREEN
+============================= */
 
 .startScreen {
     position: absolute;
@@ -22,21 +60,34 @@
     width: 100%;
     height: 100%;
 
+    overflow: hidden;
+
     img {
+        display: block;
+
         width: 100%;
         height: 100%;
+
         object-fit: cover;
-        display: block;
     }
 
     button {
         position: absolute;
+
         left: 50%;
         bottom: 40px;
-        transform: translateX(-50%);
+
         z-index: 11;
+
+        transform: translateX(-50%);
     }
 }
+
+
+/* =============================
+          START BUTTON
+============================= */
+
 .startGame {
     padding: 12px 28px;
 
@@ -68,4 +119,249 @@
         background 0.2s ease,
         box-shadow 0.2s ease,
         transform 0.2s ease;
+
+    &:hover {
+        background: rgba(255, 49, 95, 0.18);
+
+        box-shadow:
+            0 0 8px rgba(255, 49, 95, 0.9),
+            0 0 18px rgba(255, 49, 95, 0.7),
+            0 0 30px rgba(255, 49, 95, 0.4),
+            inset 0 0 12px rgba(255, 49, 95, 0.2);
+    }
+}
+
+
+/* =====================================================
+                    TABLETTE
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .gamePage {
+        padding-top: 120px;
+
+        > h1 {
+            font-size: 28px;
+        }
+    }
+
+    .gameContainer {
+        width: 85vw;
+        height: calc(85vw * 0.6667);
+
+        max-width: 900px;
+        max-height: 600px;
+    }
+}
+
+
+/* =====================================================
+                     MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .gamePage {
+        min-height: 100svh;
+
+        padding:
+            105px
+            20px
+            30px;
+
+        justify-content: flex-start;
+
+        > h1 {
+            margin-bottom: 0;
+
+            font-size: 26px;
+        }
+    }
+
+
+    /* On masque l'émulateur */
+
+    .gameContainer {
+        display: none;
+    }
+
+
+    /* Message mobile */
+
+    .mobileWarning {
+        display: block;
+
+        width: 100%;
+        max-width: 500px;
+
+        margin: 25px auto 0;
+        padding: 28px 22px;
+
+        box-sizing: border-box;
+
+        text-align: center;
+        color: white;
+
+        background: linear-gradient(
+            145deg,
+            rgba(8, 45, 78, 0.88),
+            rgba(8, 65, 105, 0.72)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 18px;
+
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+
+        /* Badge Mobile */
+
+        .mobileWarningBadge {
+            display: inline-block;
+
+            margin-bottom: 14px;
+            padding: 5px 12px;
+
+            background: rgba(255, 59, 112, 0.15);
+
+            border: 1px solid rgba(255, 59, 112, 0.45);
+            border-radius: 20px;
+
+            color: #ff6b93;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+
+        /* Titre */
+
+        h2 {
+            margin: 0 0 12px;
+
+            font-size: 25px;
+            font-weight: 800;
+            line-height: 1.2;
+
+            color: white;
+
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* Description */
+
+        p {
+            max-width: 400px;
+
+            margin: 0 auto;
+
+            font-size: 14px;
+            line-height: 1.6;
+
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+
+        /* Support tactile */
+
+        .mobileWarningNote {
+            display: block;
+
+            margin-top: 18px;
+            padding-top: 15px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+            color: rgba(255, 255, 255, 0.9);
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+}
+
+
+/* =====================================================
+                  PETIT MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .gamePage {
+        padding:
+            95px
+            14px
+            25px;
+
+        > h1 {
+            font-size: 23px;
+        }
+    }
+
+    .mobileWarning {
+        margin-top: 20px;
+        padding: 24px 18px;
+
+        border-radius: 16px;
+
+        .mobileWarningBadge {
+            margin-bottom: 12px;
+
+            font-size: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .mobileWarningNote {
+            margin-top: 16px;
+            padding-top: 14px;
+
+            font-size: 11px;
+        }
+    }
+}
+
+
+/* =====================================================
+                TRÈS PETIT MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .gamePage {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        > h1 {
+            font-size: 21px;
+        }
+    }
+
+    .mobileWarning {
+        padding: 20px 15px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
 }

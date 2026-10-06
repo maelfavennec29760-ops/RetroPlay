@@ -1,5 +1,6 @@
 .consoleCard {
     position: relative;
+
     min-height: 280px;
     padding: 20px;
     margin-top: 10px;
@@ -7,6 +8,7 @@
     display: flex;
     flex-direction: column;
 
+    box-sizing: border-box;
     overflow: hidden;
 
     background: linear-gradient(
@@ -34,6 +36,7 @@
 
     &:hover {
         transform: translateY(-5px);
+
         border-color: rgba(120, 190, 255, 0.65);
 
         box-shadow:
@@ -41,6 +44,11 @@
             0 0 25px rgba(50, 150, 255, 0.12);
     }
 }
+
+
+/* =========================
+        CONSOLE COVER
+========================= */
 
 .consoleCover {
     height: 155px;
@@ -53,15 +61,23 @@
         width: 100%;
         height: 100%;
         max-width: 260px;
+
         object-fit: contain;
 
         transform: translateY(30px);
 
-        filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.3));
+        filter: drop-shadow(
+            0 10px 10px rgba(0, 0, 0, 0.3)
+        );
+
         transition: transform 0.25s ease;
     }
 }
 
+
+/* =========================
+        INFORMATIONS
+========================= */
 
 .consoleInfo {
     margin-top: 30px;
@@ -86,8 +102,14 @@
     }
 }
 
+
+/* =========================
+          DETAILS
+========================= */
+
 .consoleDetails {
     position: absolute;
+
     top: 18px;
     left: 18px;
     right: 18px;
@@ -96,10 +118,13 @@
     justify-content: space-between;
     align-items: center;
 
+    gap: 10px;
+
     span {
         padding: 5px 11px;
 
         background: rgba(255, 255, 255, 0.08);
+
         border: 1px solid rgba(255, 255, 255, 0.22);
         border-radius: 20px;
 
@@ -109,5 +134,196 @@
         font-weight: 600;
 
         color: rgba(255, 255, 255, 0.85);
+
+        white-space: nowrap;
+    }
+}
+
+
+/* =====================================================
+                    TABLETTE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .consoleCard {
+        min-height: 270px;
+
+        padding: 18px;
+    }
+
+    .consoleCover {
+        height: 145px;
+
+        img {
+            max-width: 230px;
+
+            transform: translateY(27px);
+        }
+    }
+
+    .consoleInfo {
+        margin-top: 27px;
+
+        h2 {
+            font-size: 19px;
+        }
+
+        p {
+            font-size: 13px;
+        }
+    }
+}
+
+
+/* =====================================================
+                     MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .consoleCard {
+        width: 100%;
+
+        min-height: 250px;
+
+        padding: 18px;
+        margin-top: 0;
+
+        border-radius: 16px;
+
+        &:hover {
+            transform: none;
+        }
+    }
+
+    .consoleCover {
+        height: 135px;
+
+        img {
+            max-width: 220px;
+
+            transform: translateY(24px);
+        }
+    }
+
+    .consoleInfo {
+        margin-top: 25px;
+
+        h2 {
+            font-size: 19px;
+        }
+
+        p {
+            font-size: 13px;
+            line-height: 1.4;
+        }
+    }
+
+    .consoleDetails {
+        top: 14px;
+        left: 14px;
+        right: 14px;
+
+        span {
+            padding: 4px 9px;
+
+            font-size: 11px;
+        }
+    }
+}
+
+
+/* =====================================================
+                  PETIT MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .consoleCard {
+        min-height: 235px;
+
+        padding: 15px;
+
+        border-radius: 14px;
+    }
+
+    .consoleCover {
+        height: 125px;
+
+        img {
+            max-width: 190px;
+
+            transform: translateY(22px);
+        }
+    }
+
+    .consoleInfo {
+        margin-top: 22px;
+
+        h2 {
+            margin-bottom: 4px;
+
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .consoleDetails {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+
+        span {
+            padding: 4px 8px;
+
+            font-size: 10px;
+        }
+    }
+}
+
+
+/* =====================================================
+                TRÈS PETIT MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .consoleCard {
+        min-height: 220px;
+
+        padding: 13px;
+    }
+
+    .consoleCover {
+        height: 115px;
+
+        img {
+            max-width: 170px;
+
+            transform: translateY(20px);
+        }
+    }
+
+    .consoleInfo {
+        margin-top: 20px;
+
+        h2 {
+            font-size: 17px;
+        }
+
+        p {
+            font-size: 11px;
+        }
+    }
+
+    .consoleDetails {
+
+        span {
+            font-size: 9px;
+        }
     }
 }

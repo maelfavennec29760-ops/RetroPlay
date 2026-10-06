@@ -11,8 +11,8 @@ function GameCard({ cover, title, console, year, id }) {
             <div className='gameInfo'>
                 <h2>{title}</h2>
                 <div className='gameDetails'>
-                    <span>{console}</span>
-                    <span>{year}</span>
+                    <span className="console">{console}</span>
+                    <span className="year">{year}</span>
                 </div>
             </div>
         </article>

@@ -1,12 +1,20 @@
 .consolePage {
+    position: relative;
+
     min-height: 100vh;
+
     padding-top: 120px;
-    padding-left: 5px;
+    padding-bottom: 30px;
+
+    box-sizing: border-box;
+
     &::before {
         content: "";
+
         position: absolute;
         inset: 0;
         z-index: 0;
+
         pointer-events: none;
 
         background: linear-gradient(
@@ -22,33 +30,203 @@
         z-index: 1;
     }
 
+
+    /* =========================
+            TITRE
+    ========================= */
+
     .consoleText {
-        color: white;
         width: 80%;
         margin: 0 auto;
 
+        color: white;
+
         h1 {
             margin: 0 0 8px;
+
             font-size: 42px;
             font-weight: 800;
             line-height: 1.1;
+
             text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
         }
+
         p {
             margin: 0;
+
             font-size: 17px;
             font-weight: 400;
             line-height: 1.5;
+
             color: rgba(255, 255, 255, 0.9);
+
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
         }
     }
 }
+
+
+/* =========================
+        CONSOLES GRID
+========================= */
+
 .consolesGrid {
     width: 80%;
-    margin: 0 auto;
+
+    margin: 15px auto 0;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
     gap: 18px;
+}
+
+
+/* =====================================================
+                    TABLETTE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .consolePage {
+
+        .consoleText {
+            width: 88%;
+        }
+    }
+
+    .consolesGrid {
+        width: 88%;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+}
+
+
+/* =====================================================
+                 PETITE TABLETTE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .consolePage {
+        padding-top: 105px;
+
+        .consoleText {
+
+            h1 {
+                font-size: 36px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+
+/* =====================================================
+                     MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .consolePage {
+        min-height: 100svh;
+
+        padding:
+            95px
+            20px
+            30px;
+
+        &::before {
+            background: linear-gradient(
+                180deg,
+                rgba(5, 30, 60, 0.35) 0%,
+                rgba(5, 30, 60, 0.15) 100%
+            );
+        }
+
+        .consoleText {
+            width: 100%;
+
+            text-align: center;
+
+            h1 {
+                margin-bottom: 6px;
+
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .consolesGrid {
+        width: 100%;
+
+        margin-top: 20px;
+
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+}
+
+
+/* =====================================================
+                  PETIT MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .consolePage {
+        padding:
+            90px
+            14px
+            25px;
+
+        .consoleText {
+
+            h1 {
+                font-size: 27px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+
+    .consolesGrid {
+        margin-top: 18px;
+
+        gap: 12px;
+    }
+}
+
+
+/* =====================================================
+                TRÈS PETIT MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .consolePage {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        .consoleText {
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    }
 }

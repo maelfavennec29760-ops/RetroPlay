@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
+
     width: 80%;
     margin: 25px auto 0;
 
@@ -15,9 +16,11 @@
         padding: 10px 20px;
 
         color: white;
+
         font-family: inherit;
         font-size: 14px;
         font-weight: 600;
+
         white-space: nowrap;
 
         background: rgba(12, 62, 105, 0.75);
@@ -38,19 +41,157 @@
         img {
             width: 27px;
             height: 27px;
+
             object-fit: contain;
+
+            flex-shrink: 0;
         }
 
         &:hover {
             background: rgba(20, 92, 155, 0.85);
             border-color: rgba(255, 255, 255, 0.25);
+
             transform: translateY(-2px);
         }
 
         &.active {
             background: #2583ef;
             border-color: #2583ef;
+
             box-shadow: 0 4px 14px rgba(20, 105, 220, 0.35);
+        }
+    }
+}
+
+
+/* =============================
+        TABLETTE
+============================= */
+
+@media (max-width: 1200px) {
+
+    .consoleSelect {
+        width: 88%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-bottom: 8px;
+
+        /*
+         * Empêche les boutons de rétrécir
+         */
+        button {
+            flex-shrink: 0;
+
+            padding: 9px 16px;
+
+            font-size: 13px;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        /*
+         * Cache la scrollbar
+         */
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+
+/* =============================
+          MOBILE
+============================= */
+
+@media (max-width: 768px) {
+
+    .consoleSelect {
+        width: 100%;
+
+        margin-top: 20px;
+
+        gap: 8px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding-bottom: 5px;
+
+        /*
+         * Scroll plus naturel sur mobile
+         */
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+
+        button {
+            flex-shrink: 0;
+
+            min-height: 42px;
+
+            padding: 8px 14px;
+
+            gap: 7px;
+
+            border-radius: 14px;
+
+            font-size: 12px;
+
+            scroll-snap-align: start;
+
+            img {
+                width: 23px;
+                height: 23px;
+            }
+
+            /*
+             * Pas besoin d'effet hover
+             * sur écran tactile
+             */
+            &:hover {
+                transform: none;
+            }
+        }
+
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+
+/* =============================
+       PETIT MOBILE
+============================= */
+
+@media (max-width: 480px) {
+
+    .consoleSelect {
+        margin-top: 18px;
+
+        gap: 7px;
+
+        button {
+            min-height: 40px;
+
+            padding: 7px 12px;
+
+            font-size: 11px;
+
+            border-radius: 12px;
+
+            img {
+                width: 21px;
+                height: 21px;
+            }
         }
     }
 }

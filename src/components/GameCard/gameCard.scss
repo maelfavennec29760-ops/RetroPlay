@@ -1,6 +1,11 @@
 .gameCardLink {
+    display: block;
+
+    width: 205px;
+
     text-decoration: none;
     color: inherit;
+
     &:visited,
     &:hover,
     &:active {
@@ -8,9 +13,13 @@
         color: inherit;
     }
 }
+
+
 .gameCard {
-    width: 205px;
+    width: 100%;
     padding: 12px;
+
+    box-sizing: border-box;
 
     background: rgba(7, 48, 83, 0.88);
     backdrop-filter: blur(10px);
@@ -22,6 +31,24 @@
 
     color: white;
     cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+
+        border-color: rgba(255, 255, 255, 0.22);
+
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+    }
+
+
+    /* =========================
+            COVER
+    ========================= */
 
     .gameCover {
         width: 100%;
@@ -43,10 +70,17 @@
         }
     }
 
+
+    /* =========================
+            INFORMATIONS
+    ========================= */
+
     .gameInfo {
         padding-top: 10px;
 
         h2 {
+            min-height: 38px;
+
             margin: 0 0 12px;
 
             color: white;
@@ -54,12 +88,22 @@
             font-size: 15px;
             font-weight: 700;
             line-height: 1.25;
+
+            /*
+             * Maximum deux lignes pour éviter
+             * qu'une carte soit beaucoup plus
+             * grande que les autres.
+             */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .gameDetails {
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            gap: 8px;
 
             .console {
                 padding: 4px 10px;
@@ -73,13 +117,172 @@
 
                 font-size: 11px;
                 font-weight: 500;
+
+                white-space: nowrap;
+
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .year {
+                flex-shrink: 0;
+
                 color: rgba(255, 255, 255, 0.7);
 
                 font-size: 11px;
                 font-weight: 500;
+            }
+        }
+    }
+}
+
+
+/* =====================================================
+                    TABLETTE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .gameCardLink {
+        width: 100%;
+    }
+
+    .gameCard {
+
+        .gameCover {
+            height: 145px;
+        }
+    }
+}
+
+
+/* =====================================================
+                     MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .gameCardLink {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .gameCard {
+        width: 100%;
+
+        padding: 10px;
+
+        border-radius: 12px;
+
+        /*
+         * Pas d'effet hover qui déplace
+         * la carte sur écran tactile.
+         */
+        &:hover {
+            transform: none;
+        }
+
+        .gameCover {
+            height: 135px;
+
+            border-radius: 7px;
+        }
+
+        .gameInfo {
+            padding-top: 8px;
+
+            h2 {
+                min-height: 34px;
+
+                margin-bottom: 9px;
+
+                font-size: 13px;
+            }
+
+            .gameDetails {
+
+                .console {
+                    padding: 3px 7px;
+
+                    font-size: 9px;
+                }
+
+                .year {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+/* =====================================================
+                  PETIT MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .gameCard {
+        padding: 8px;
+
+        .gameCover {
+            height: 120px;
+        }
+
+        .gameInfo {
+
+            h2 {
+                min-height: 32px;
+
+                margin-bottom: 8px;
+
+                font-size: 12px;
+            }
+
+            .gameDetails {
+                gap: 5px;
+
+                .console {
+                    max-width: 90px;
+
+                    padding: 3px 6px;
+
+                    font-size: 8px;
+                }
+
+                .year {
+                    font-size: 9px;
+                }
+            }
+        }
+    }
+}
+
+
+/* =====================================================
+                TRÈS PETIT MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .gameCard {
+        padding: 7px;
+
+        .gameCover {
+            height: 105px;
+        }
+
+        .gameInfo {
+
+            h2 {
+                font-size: 11px;
+            }
+
+            .gameDetails {
+
+                .console {
+                    max-width: 70px;
+                }
             }
         }
     }

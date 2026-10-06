@@ -8,10 +8,11 @@
     height: 100vh;
     padding: 120px 20px 15px;
 
+    box-sizing: border-box;
+
     color: white;
     overflow: hidden;
 
-    // Ombre sur le côté gauche du décor
     &::before {
         content: "";
 
@@ -100,9 +101,10 @@
 
     background: #ff3b70;
 
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+
 // =============================
 // CONTENU
 // =============================
@@ -130,12 +132,15 @@
 
     padding: 22px 30px;
 
+    box-sizing: border-box;
+
     background: rgba(7, 44, 82, 0.88);
 
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.3),
@@ -195,12 +200,15 @@
 
     padding: 20px 24px;
 
+    box-sizing: border-box;
+
     background: rgba(7, 44, 82, 0.88);
 
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.3),
@@ -256,12 +264,15 @@
 
     padding: 16px 20px;
 
+    box-sizing: border-box;
+
     background: rgba(7, 44, 82, 0.88);
 
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 12px;
 
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 
     box-shadow:
         0 10px 25px rgba(0, 0, 0, 0.3),
@@ -308,6 +319,8 @@
     justify-content: center;
     align-items: center;
 
+    box-sizing: border-box;
+
     text-align: center;
 
     background: rgba(0, 0, 0, 0.12);
@@ -315,8 +328,7 @@
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
 
-    box-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 
     transition:
         transform 0.2s ease,
@@ -348,10 +360,10 @@
     gap: 4px;
 
     img {
+        display: block;
+
         width: 27px;
         height: 27px;
-
-        display: block;
 
         object-fit: contain;
     }
@@ -386,25 +398,59 @@
 
 
 // =============================
-// TABLETTE / MOBILE
+// TABLETTE
+// =============================
+
+@media (max-width: 1024px) {
+
+    .about {
+        height: auto;
+        min-height: 100vh;
+
+        padding-left: 30px;
+        padding-right: 30px;
+
+        overflow: visible;
+    }
+
+    .aboutContent {
+        width: min(850px, 100%);
+    }
+
+    .aboutIntroVisual {
+        width: 140px;
+
+        font-size: 55px;
+    }
+
+    .technologiesGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+
+// =============================
+// MOBILE
 // =============================
 
 @media (max-width: 768px) {
 
     .about {
         height: auto;
-        min-height: 100vh;
+        min-height: 100svh;
 
-        padding: 90px 15px 30px;
+        padding:
+            95px
+            20px
+            30px;
 
         overflow: visible;
 
         &::before {
             background: linear-gradient(
-                90deg,
+                180deg,
                 rgba(5, 30, 60, 0.35) 0%,
-                rgba(5, 30, 60, 0.12) 50%,
-                transparent 100%
+                rgba(5, 30, 60, 0.12) 100%
             );
         }
     }
@@ -413,15 +459,25 @@
     // HERO
 
     .aboutHero {
-        margin-bottom: 18px;
+        margin-bottom: 20px;
 
         h1 {
             font-size: 30px;
         }
 
         p {
+            max-width: 430px;
+
+            margin-top: 11px;
+
             font-size: 13px;
         }
+    }
+
+    .aboutHeroLine {
+        width: 45px;
+
+        margin-top: 11px;
     }
 
 
@@ -434,17 +490,21 @@
 
         flex-direction: column;
 
-        gap: 15px;
+        gap: 12px;
     }
 
-
     .aboutIntroText {
+        width: 100%;
+        max-width: none;
 
         h2 {
             font-size: 21px;
         }
-    }
 
+        p {
+            font-size: 13px;
+        }
+    }
 
     .aboutIntroVisual {
         width: auto;
@@ -457,25 +517,44 @@
 
     .aboutGrid {
         grid-template-columns: 1fr;
-    }
 
+        gap: 12px;
+    }
 
     .aboutCard {
         min-height: auto;
+
+        padding: 20px;
+
+        h2 {
+            font-size: 20px;
+        }
     }
 
 
     // TECHNOLOGIES
 
-    .technologiesGrid {
-        grid-template-columns: repeat(2, 1fr);
+    .aboutTechnologies {
+        padding: 18px;
+
+        h2 {
+            font-size: 19px;
+        }
     }
 
+    .technologiesGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 8px;
+    }
 
     .techCard {
         min-height: 82px;
-    }
 
+        &:hover {
+            transform: none;
+        }
+    }
 
     .techCardTitle {
 
@@ -493,29 +572,126 @@
 
 @media (max-width: 480px) {
 
+    .about {
+        padding:
+            90px
+            14px
+            25px;
+    }
+
     .aboutHero {
 
         h1 {
             font-size: 26px;
         }
+
+        p {
+            max-width: 330px;
+
+            font-size: 12px;
+        }
     }
 
+    .aboutIntro {
+        padding: 17px;
+    }
+
+    .aboutIntroText {
+
+        h2 {
+            font-size: 19px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .aboutIntroVisual {
+        font-size: 40px;
+    }
+
+    .aboutCard {
+        padding: 17px;
+
+        h2 {
+            font-size: 19px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+    }
+
+    .featuresList {
+
+        li {
+            font-size: 12px;
+        }
+    }
+
+    .aboutTechnologies {
+        padding: 16px;
+
+        > p {
+            font-size: 10px;
+        }
+    }
 
     .technologiesGrid {
-        grid-template-columns: 1fr;
-    }
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
+        gap: 7px;
+    }
 
     .techCard {
-        min-height: 85px;
-    }
+        min-height: 78px;
 
+        padding: 8px 5px;
+    }
 
     .techCardTitle {
 
         img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
         }
+
+        strong {
+            font-size: 12px;
+        }
+
+        span {
+            font-size: 8px;
+        }
+    }
+}
+
+
+// =============================
+// TRÈS PETIT MOBILE
+// =============================
+
+@media (max-width: 360px) {
+
+    .about {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .aboutHero {
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+
+    .aboutIntro,
+    .aboutCard {
+        padding: 15px;
+    }
+
+    .aboutTechnologies {
+        padding: 14px;
     }
 }
